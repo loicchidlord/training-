@@ -1,25 +1,13 @@
-#include <stdio.h>
-#include <math.h>
-
-/*double f(double x)
-{
-	double result;
-	result=1/sqrt(x)-12*cos(x);
-	return result;
-}
-
-double fonction(double result)
-{
-
-}
-*/
-int main()
-{
-    int i,n;
-    printf("Nombre maximal d'itérations: ");
-    scanf("%d",&n);
-    for(i=0;i<n;i++)
-    {   
-        printf("compteur %d\n",i+1);
-    }
+int main() {
+    double num;
+    printf("Enter a number: ");
+    scanf("%lf", &num);
+    if (num <= 0.0) {
+        if (num == 0.0)
+            printf("You entered 0.");
+        else
+            printf("You entered a negative number.");
+    } else
+        printf("You entered a positive number.");
+    return 0;
 }

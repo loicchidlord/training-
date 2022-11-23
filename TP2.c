@@ -1,36 +1,36 @@
 #include <stdio.h>
 #include <math.h>
-
+//définir la fonction f et dire à la fonction le type de valeur qu’il faut qu’elle retourne.
 double f(double x)
 {
-    double fonction=pow(x,2);
-    return fonction;
+return exp(x);
 }
 //Methode des rectangles
 double aire(double (f)(double) , int a, int b, double h)
 {
-    double R;
-    int N;
-    int i;
-    R=0;
-    N=(b-a)/h;
-        for (i=1; i<=N; i++) // réaliser toutes les boucles
-        {
-            R = R + f(a+i*h)*h;
-        }
-        return R;
+//
+double acc;
+int N;
+int i;
+acc=0;
+//La valeur (b-a)/h traduit le fait que l’on découpe l’intervalle [a,b] par h. C’est la formule de l’aire
+d’un rectangle.
+N=(b-a)/h;
+for (i=1; i<=N; i++) // réaliser toutes les boucles
+{
+acc = acc + f(a+i*h)*h;
 }
-
+return acc;
+}
 int main()
 {
-    int a, b, N;
-    double h;
-    printf("Valeur de la borne a : ");
-    scanf("%d",&a);
-    printf("Valeur de la borne b : ");
-    scanf("%d",&b);
-    printf("Valeur de h : ");
-    scanf("%lf",&h);
-    printf ("valeur de l'integrale de la fonction: %lf\n", aire(f, a, b, h));
-    return 0;
+double Aire;
+// a=0; /* Borne inferieure de l'intervalle */; b=1; /* Borne superieure de l'intervalle */
+
+//affiche le message préfini.
+printf ("valeur de l'integrale de la fonction: %f\n", aire(f, 0, 1, 0.1));
+//fin du programme
+return 0;
 }
+
+
